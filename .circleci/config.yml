@@ -1,0 +1,9 @@
+version: 2.1
+jobs: # a collection of steps
+  build:
+    machine: true
+    steps:
+      - checkout
+      #   LOGIN MICROSERVICE
+      - run: cd ./BackEnd/loginmicroservices/ && ./mvnw package
+      - run: ./mvnw test
